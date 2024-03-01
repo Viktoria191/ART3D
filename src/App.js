@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { PieChart } from '@mui/x-charts/PieChart';
 
-function App() {
+const data = [
+  { id: 0, value: 15, label: 'РОЗОВЫЙ СЕГМЕНТ', color: '#FF69B4' },
+  { id: 1, value: 15, label: 'СЕРЫЙ СЕГМЕНТ', color: '#D9D9D9' },
+  { id: 2, value: 20, label: 'ЗЕЛЕНЫЙ СЕГМЕНТ', color: '#97BB31' },
+];
+
+export default function PieActiveArc() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PieChart
+      series={[
+        {
+          data,
+          highlightScope: { faded: 'global', highlighted: 'item' },
+          faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+        },
+      ]}
+      height={300}
+      width={700}
+    />
   );
 }
-
-export default App;
