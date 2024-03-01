@@ -9,16 +9,18 @@ const data = [
 
 export default function PieActiveArc() {
   return (
-    <PieChart
-      series={[
-        {
-          data,
-          highlightScope: { faded: 'global', highlighted: 'item' },
-          faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
-        },
-      ]}
-      height={300}
-      width={700}
-    />
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '200px' }}>
+      <PieChart
+        series={[
+          {
+            data,
+            highlightScope: { faded: 'global', highlighted: 'item' },
+            faded: { innerRadius: 30, additionalRadius: -30, color: 'gray' },
+          },
+        ]}
+        height={300}
+        width={700}
+      />
+    </div>
   );
 }
